@@ -1,6 +1,7 @@
 <template>
-
-<HeroSection />
+<section>
+    <HeroSection />
+</section>
 </template>
 
 <script>

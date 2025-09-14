@@ -1,5 +1,7 @@
 <template>
-    <article class="rounded-lg border border-gray-100 bg-white p-6">
+ <section>
+
+  <article class="rounded-lg border border-gray-100 bg-white p-6">
   <div class="flex items-center justify-between">
     <div>
       <p class="text-sm text-gray-500">Profit</p>
@@ -98,5 +100,6 @@
     </p>
   </div>
 </article>
+ </section>
 
 </template>

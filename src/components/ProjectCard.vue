@@ -21,12 +21,15 @@
 </router-link>
 
 </template>
-<script setup>
+<script>
 import { useRouter } from 'vue-router';
+import moment from 'moment';
 
-const router = useRouter();
 
-const props = defineProps({
+export default {
+    name: "ProjectCard",
+
+    props: ({
     id: {
         type: String,
         default: ""
@@ -43,9 +46,17 @@ const props = defineProps({
         type: Array,
         default: () => ["C++", "JavaScript", "HTML"]
     }
-});
+}),
+computed: {
+    formatedDate() {
+        return moment(this.date).format('LL');
+    }
+},
 
-const handleClick = () => {
-    router.push(`/project/${props.id}`);
-};
+methods: {
+    handleClick() {
+        router.push(`/project/${this.id}`);
+    }
+}
+}
 </script>

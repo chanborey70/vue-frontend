@@ -9,6 +9,7 @@
           fill="currentColor"
         />
       </svg>
+      {{ count}}
     </router-link>
 
     <div class="flex flex-1 items-center justify-end md:justify-between">
@@ -80,3 +81,13 @@
 </header>
 
 </template>
+<script>
+import { useCounterStore } from "@/stores/counter";
+import { mapState} from "pinia";
+export default {
+  computed: {
+    ...mapState(useCounterStore, ['count'])
+  },
+  
+}
+</script>
