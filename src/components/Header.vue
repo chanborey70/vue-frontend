@@ -9,7 +9,8 @@
           fill="currentColor"
         />
       </svg>
-      {{ count}}
+      {{ count}} 
+      {{ $t('error.fail') }}
     </router-link>
 
     <div class="flex flex-1 items-center justify-end md:justify-between">
@@ -32,13 +33,11 @@
           </li> -->
 
           <li>
-            <!-- <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Projects </a> -->
-            <router-link class="text-gray-500 transition hover:text-gray-500/75" to="/project"> Projects </router-link>
-
+            <router-link class="text-gray-500 transition hover:text-gray-500/75" to="/project"> {{ $t('project') }} </router-link>
           </li>
 
           <li>
-            <router-link class="text-gray-500 transition hover:text-gray-500/75" to="/blog"> Blog </router-link>
+            <router-link class="text-gray-500 transition hover:text-gray-500/75" to="/blog"> {{ $t('blog') }} </router-link>
           </li>
         </ul>
       </nav>
@@ -49,14 +48,22 @@
             class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
             href="#"
           >
-            Login
+            {{ $t('login') }}
           </a>
 
           <a
             class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
             href="#"
           >
-            Register
+            {{ $t('register') }}
+          </a>
+
+          <a
+            class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+            href="#"
+            @click.prevent="toggleLocale"
+          >
+            {{ $t('switch_language') }}
           </a>
         </div>
 
@@ -87,6 +94,12 @@ import { mapState} from "pinia";
 export default {
   computed: {
     ...mapState(useCounterStore, ['count'])
+  },
+  methods: {
+    toggleLocale() {
+      const current = this.$i18n.locale;
+      this.$i18n.locale = current === 'en' ? 'km' : 'en';
+    }
   },
   
 }

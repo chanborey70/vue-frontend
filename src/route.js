@@ -11,6 +11,12 @@ import Blog from './pages/Blog.vue'
 import Collection from './components/Collection.vue'
 import NotFound from './components/NotFound.vue'
 
+// Import the module (typescript types are removed in Javascript)
+import {HSStaticMethods} from 'preline' 
+
+// Declaring the global window property
+window.HSStaticMethods = HSStaticMethods
+
 const routes = [
   { path: '/', component: Home },
   // { path: '/project', component: Project },
@@ -24,9 +30,14 @@ const routes = [
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
-export const router = createRouter({
+const router = createRouter({
   // history: createMemoryHistory(),
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: 'font-bold',
-  routes,
+  routes
 })
+// Set up the navigation guard after router is created
+router.afterEach(async (to, from, failure) => {
+  if (!failure) setTimeout(() => window.HSStaticMethods.autoInit(), 100)
+})
+export { router, routes }

@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
         <div>
           <div class="max-w-prose md:max-w-none">
-            <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+            <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl" :class="{ 'text-red-900': count > 10 }">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.{{ count }}
             </h2>
 

@@ -1,0 +1,58 @@
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('../assets/fonts/KantumruyPro-Italic-VariableFont_wght.ttf');
+@import url('../assets/fonts/KantumruyPro-Regular-VariableFont_wght.ttf');
+@import url('../assets/fonts/KantumruyPro-Bold-VariableFont_wght.ttf');
+@import url('../assets/fonts/Roboto-Italic-VariableFont_wght.ttf');
+@import url('../assets/fonts/Roboto-Regular-VariableFont_wght.ttf');
+@import url('../assets/fonts/Roboto-Bold-VariableFont_wght.ttf'); */
+
+@font-face {
+  font-family: 'Roboto-Italic';
+  src: url('../assets/fonts/Roboto-Italic-VariableFont_wght.ttf');
+}   
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('../assets/fonts/Roboto-Regular-VariableFont_wght.ttf');
+}   
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('../assets/fonts/Roboto-Bold-VariableFont_wght.ttf');
+}   
+@font-face {
+  font-family: 'Kantumruy-Italic';
+  src: url('../assets/fonts/KantumruyPro-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: 'Kantumruy-Regular';
+  src: url('../assets/fonts/KantumruyPro-Regular-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: 'Kantumruy-Bold';
+  src: url('../assets/fonts/KantumruyPro-Bold-VariableFont_wght.ttf');
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.kantumruy {
+  font-family: "Kantumruy Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
